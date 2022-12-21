@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="650.0" style="-fx-background-color: #F2E5E5;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kitapsatisfx.SiparisYonetimSistemiController">
+   <children>
+      <TableView fx:id="tb_siparis" layoutX="6.0" layoutY="290.0" prefHeight="356.0" prefWidth="638.0">
+        <columns>
+          <TableColumn fx:id="siparisID" prefWidth="75.0" text="Sipariş ID" />
+          <TableColumn fx:id="musteriID" prefWidth="75.0" text="Müşteri ID" />
+          <TableColumn fx:id="siparisTutari" prefWidth="96.0" text="Sipariş Tutarı" />
+          <TableColumn fx:id="siparisTarihi" prefWidth="98.0" text="Sipariş Tarihi" />
+          <TableColumn fx:id="siparisDurumu" prefWidth="113.0" text="Sipariş Durumu" />
+          <TableColumn fx:id="siparisNotu" prefWidth="180.0" text="Sipariş Notu" />
+        </columns>
+      </TableView>
+      <HBox layoutX="7.0" layoutY="244.0" prefHeight="35.0" prefWidth="638.0" spacing="10.0">
+         <children>
+            <Button fx:id="btn_calisanEkle" mnemonicParsing="false" onAction="#odemeKontrol" prefHeight="30.0" prefWidth="120.0" style="-fx-background-radius: 7;" text="Ödeme Kontrol" />
+            <Button fx:id="btn_calisanSil" mnemonicParsing="false" onAction="#siparisHazirla" prefHeight="30.0" prefWidth="120.0" style="-fx-background-radius: 7;" text="Siparişi Hazırla" />
+            <Button fx:id="btn_calisanGuncelle" mnemonicParsing="false" onAction="#kargoyaVer" prefHeight="30.0" prefWidth="120.0" style="-fx-background-radius: 7;" text="Kargoya Ver" />
+            <Button fx:id="btn_calisanEkle1" mnemonicParsing="false" onAction="#siparisiIptalEt" prefHeight="30.0" prefWidth="120.0" style="-fx-background-radius: 7;" text="Siparişi İptal Et" />
+            <Button fx:id="btn_siparisDetayi" mnemonicParsing="false" onAction="#siparisDetayGoruntule" prefHeight="30.0" prefWidth="120.0" style="-fx-background-radius: 7;" text="Sipariş Detayı" />
+         </children>
+      </HBox>
+      <HBox layoutX="76.0" layoutY="158.0" prefHeight="35.0" prefWidth="254.0" spacing="5.0">
+         <children>
+            <Button fx:id="btn_hesapla" mnemonicParsing="false" onAction="#degerHesapla" prefHeight="27.0" prefWidth="120.0" style="-fx-background-radius: 7;" text="Hesapla" />
+            <Button fx:id="btn_siparisBilgisi" mnemonicParsing="false" onAction="#siparisBilgisiAl" prefHeight="27.0" prefWidth="120.0" style="-fx-background-radius: 7;" text="İlgili Sipariş" />
+         </children>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </HBox>
+      <Label alignment="CENTER" layoutX="77.0" layoutY="8.0" prefHeight="45.0" prefWidth="488.0" text="Sipariş Yönetim Sistemi" textFill="#ce7777">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="ta_sonuc" layoutX="372.0" layoutY="71.0" prefHeight="151.0" prefWidth="247.0" style="-fx-background-color: #E8C4C4;" />
+      <ComboBox fx:id="cmb_istenen" layoutX="128.0" layoutY="110.0" prefWidth="150.0" style="-fx-background-radius: 7;" />
+      <ImageView fitHeight="52.0" fitWidth="413.0" layoutX="115.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/siparisYonetimSistemi.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="752.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kitapsatisfx.MainPageController">
+   <children>
+      <BorderPane layoutX="-29.0" prefHeight="700.0" prefWidth="829.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-29.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="700.0" prefWidth="254.0" style="-fx-background-color: #2B3A55;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="170.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #fefefe;" text="Kategoriye göre alışveriş yap" textAlignment="CENTER" wrappingWidth="191.8701171875">
+                           <font>
+                              <Font name="Verdana" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="25.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="39.0" prefWidth="254.0" style="-fx-border-color: #fefefe;">
+                     <children>
+                        <Button mnemonicParsing="false" style="-fx-background-color: #2B3A55;" text="Roman" textFill="#f2e5e5">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="39.0" prefWidth="254.0" style="-fx-border-color: #fefefe;">
+                     <children>
+                        <Button mnemonicParsing="false" style="-fx-background-color: #2B3A55;" text="Tarih" textFill="#f2e5e5">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="149.0" prefHeight="39.0" prefWidth="254.0" style="-fx-border-color: #fefefe;">
+                     <children>
+                        <Button mnemonicParsing="false" style="-fx-background-color: #2B3A55;" text="Felsefe" textFill="#f2e5e5">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="188.0" prefHeight="71.0" prefWidth="254.0">
+                     <children>
+                        <ComboBox fx:id="viewAllCombo" editable="true" prefWidth="150.0" promptText="Tümünü görüntüle" style="-fx-background-color: #2B3A55;">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin></ComboBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="57.0" prefWidth="254.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #fefefe;" text="Yardım ve Ayarlar" textAlignment="CENTER" wrappingWidth="191.8701171875">
+                           <font>
+                              <Font name="Verdana" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="39.0" prefWidth="254.0" style="-fx-border-color: #fefefe;">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#displayData" style="-fx-background-color: #2B3A55;" text="Hesabım" textFill="#f2e5e5">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="366.0" prefHeight="39.0" prefWidth="254.0" style="-fx-border-color: #fefefe;">
+                     <children>
+                        <Button mnemonicParsing="false" style="-fx-background-color: #2B3A55;" text="Hakkımızda" textFill="#f2e5e5">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="405.0" prefHeight="39.0" prefWidth="254.0" style="-fx-border-color: #fefefe;">
+                     <children>
+                        <Button fx:id="logOutBtn" mnemonicParsing="false" onAction="#logOutBtnClicked" style="-fx-background-color: #2B3A55;" text="Çıkış yap" textFill="#f2e5e5">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Pane fx:id="basketPane" prefHeight="256.0" prefWidth="254.0" style="-fx-background-color: #F2E5E5; -fx-border-color: gray; -fx-border-image-width: 4px;" visible="false">
+                     <children>
+                        <Text layoutX="61.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Toplam" textAlignment="CENTER">
+                           <font>
+                              <Font name="Verdana" size="13.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="totalPrice" layoutX="177.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="40.0">
+                           <font>
+                              <Font name="Verdana" size="13.0" />
+                           </font>
+                        </Text>
+                        <VBox fx:id="basketVb2" alignment="TOP_CENTER" layoutX="142.0" layoutY="14.0" prefHeight="200.0" prefWidth="111.0" />
+                        <VBox fx:id="basketVb" alignment="TOP_CENTER" layoutX="30.0" layoutY="14.0" prefHeight="200.0" prefWidth="111.0" />
+                     </children>
+                  </Pane>
+                  <Button fx:id="orderBtn" mnemonicParsing="false" onAction="#orderBtnClicked" prefHeight="21.0" prefWidth="210.0" style="-fx-background-color: #F2E5E5;" text="Sipariş ver" visible="false">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="36.0" top="3.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #F2E5E5;">
+                     <children>
+                        <TextField prefHeight="26.0" prefWidth="262.0" promptText="Kitap ara" style="-fx-background-radius: 9px;" />
+                        <Button mnemonicParsing="false" style="-fx-background-radius: 9px; -fx-text-fill: #fefefe; -fx-background-color: #2B3A55;" text="Ara" />
+                        <Pane prefHeight="100.0" prefWidth="55.0" />
+                        <Button mnemonicParsing="false" onAction="#basketBtnClicked" style="-fx-background-color: #F2E5E5; -fx-text-fill: #2B3A55;" text="Sepetim" textFill="#f2e5e5">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="350.0" layoutY="47.0" mnemonicParsing="false" style="-fx-background-color: #F2E5E5; -fx-text-fill: #2B3A55;" text="Siparişlerim" textFill="#f2e5e5">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="600.0" prefWidth="546.0" style="-fx-background-color: #F2E5E5;">
+                     <children>
+                        <ScrollPane fx:id="scrollPane" minHeight="-Infinity" prefHeight="668.0" prefWidth="520.0" style="-fx-background-color: #F2E5E5;">
+                           <content>
+                              <VBox fx:id="vbMain" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="552.0" style="-fx-background-color: #F2E5E5;">
+                                 <children>
+                                    <HBox fx:id="hb" prefHeight="201.0" prefWidth="521.0" style="-fx-background-color: E8C4C4;">
+                                       <children>
+                                          <Pane prefHeight="156.0" prefWidth="80.0" />
+                                          <VBox fx:id="vb1" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="156.0" prefWidth="180.0" style="-fx-border-color: GRAY;">
+                                             <children>
+                                                <HBox prefHeight="23.0" prefWidth="202.0">
+                                                   <children>
+                                                      <Button mnemonicParsing="false" onAction="#add1Clicked" prefHeight="21.0" prefWidth="108.0" style="-fx-background-color: #F2E5E5;" text="Sepete ekle">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button fx:id="remove1" disable="true" mnemonicParsing="false" onAction="#remove1Clicked" prefHeight="21.0" prefWidth="108.0" style="-fx-background-color: #F2E5E5;" text="Sepetten çıkar">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <ImageView fx:id="iw1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ImageView>
+                                                <HBox prefHeight="39.0" prefWidth="255.0">
+                                                   <children>
+                                                      <Button fx:id="btn1" mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" style="-fx-background-color: #F2E5E5;">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <ComboBox fx:id="viewNum1" editable="true" prefHeight="26.0" prefWidth="102.0" promptText="1" style="-fx-background-color: #F2E5E5;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </VBox>
+                                          <VBox fx:id="vb2" prefHeight="156.0" prefWidth="180.0" style="-fx-border-color: GRAY;">
+                                             <children>
+                                                <HBox minHeight="-Infinity" prefHeight="23.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Button mnemonicParsing="false" onAction="#add2Clicked" prefHeight="21.0" prefWidth="100.0" style="-fx-background-color: #F2E5E5;" text="Sepete ekle">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button fx:id="remove2" disable="true" mnemonicParsing="false" onAction="#remove2Clicked" prefHeight="21.0" prefWidth="108.0" style="-fx-background-color: #F2E5E5;" text="Sepetten çıkar">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <ImageView fx:id="iw2" fitHeight="148.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ImageView>
+                                                <HBox minHeight="-Infinity" prefHeight="26.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Button fx:id="btn2" mnemonicParsing="false" prefHeight="39.0" prefWidth="102.0" style="-fx-background-color: #F2E5E5;">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <ComboBox fx:id="viewNum2" editable="true" prefHeight="26.0" prefWidth="102.0" promptText="1" style="-fx-background-color: #F2E5E5;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </VBox>
+                                          <Pane prefHeight="156.0" prefWidth="80.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="hb1" prefHeight="201.0" prefWidth="521.0" style="-fx-background-color: E8C4C4;">
+                                       <children>
+                                          <Pane prefHeight="156.0" prefWidth="80.0" />
+                                          <VBox fx:id="vb3" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="156.0" prefWidth="180.0" style="-fx-border-color: GRAY;">
+                                             <children>
+                                                <HBox prefHeight="23.0" prefWidth="202.0">
+                                                   <children>
+                                                      <Button mnemonicParsing="false" onAction="#add3Clicked" prefHeight="21.0" prefWidth="100.0" style="-fx-background-color: #F2E5E5;" text="Sepete ekle">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button fx:id="remove3" disable="true" mnemonicParsing="false" onAction="#remove3Clicked" prefHeight="21.0" prefWidth="100.0" style="-fx-background-color: #F2E5E5;" text="Sepetten çıkar">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <ImageView fx:id="iw3" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ImageView>
+                                                <HBox prefHeight="39.0" prefWidth="255.0">
+                                                   <children>
+                                                      <Button fx:id="btn3" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" style="-fx-background-color: #F2E5E5;">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <ComboBox fx:id="viewNum3" editable="true" prefHeight="26.0" prefWidth="102.0" promptText="1" style="-fx-background-color: #F2E5E5;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </VBox>
+                                          <VBox fx:id="vb4" prefHeight="156.0" prefWidth="180.0" style="-fx-border-color: GRAY;">
+                                             <children>
+                                                <HBox minHeight="-Infinity" prefHeight="23.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Button mnemonicParsing="false" onAction="#add4Clicked" prefHeight="21.0" prefWidth="100.0" style="-fx-background-color: #F2E5E5;" text="Sepete ekle">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button fx:id="remove4" disable="true" mnemonicParsing="false" onAction="#remove4Clicked" prefHeight="21.0" prefWidth="100.0" style="-fx-background-color: #F2E5E5;" text="Sepetten çıkar">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <ImageView fx:id="iw4" fitHeight="148.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ImageView>
+                                                <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="27.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Button fx:id="btn4" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" prefHeight="24.0" prefWidth="103.0" style="-fx-background-color: #F2E5E5;">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <ComboBox fx:id="viewNum4" editable="true" prefHeight="36.0" prefWidth="98.0" promptText="1" style="-fx-background-color: #F2E5E5;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </VBox>
+                                          <Pane prefHeight="156.0" prefWidth="80.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="hb11" prefHeight="201.0" prefWidth="521.0" style="-fx-background-color: E8C4C4;">
+                                       <children>
+                                          <Pane prefHeight="156.0" prefWidth="80.0" />
+                                          <VBox fx:id="vb5" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="156.0" prefWidth="180.0" style="-fx-border-color: GRAY;">
+                                             <children>
+                                                <HBox prefHeight="23.0" prefWidth="202.0">
+                                                   <children>
+                                                      <Button mnemonicParsing="false" onAction="#add5Clicked" prefHeight="21.0" prefWidth="100.0" style="-fx-background-color: #F2E5E5;" text="Sepete ekle">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button fx:id="remove5" disable="true" mnemonicParsing="false" onAction="#remove5Clicked" prefHeight="21.0" prefWidth="100.0" style="-fx-background-color: #F2E5E5;" text="Sepetten çıkar">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <ImageView fx:id="iw5" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ImageView>
+                                                <HBox prefHeight="39.0" prefWidth="255.0">
+                                                   <children>
+                                                      <Button fx:id="btn5" mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" style="-fx-background-color: #F2E5E5;">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <ComboBox fx:id="viewNum5" editable="true" prefHeight="26.0" prefWidth="102.0" promptText="1" style="-fx-background-color: #F2E5E5;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </VBox>
+                                          <VBox fx:id="vb6" prefHeight="156.0" prefWidth="180.0" style="-fx-border-color: GRAY;">
+                                             <children>
+                                                <HBox minHeight="-Infinity" prefHeight="23.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Button mnemonicParsing="false" onAction="#add6Clicked" prefHeight="21.0" prefWidth="100.0" style="-fx-background-color: #F2E5E5;" text="Sepete ekle">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button fx:id="remove6" disable="true" mnemonicParsing="false" onAction="#remove6Clicked" prefHeight="21.0" prefWidth="100.0" style="-fx-background-color: #F2E5E5;" text="Sepetten çıkar">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <ImageView fx:id="iw6" fitHeight="148.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ImageView>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Button fx:id="btn6" mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" style="-fx-background-color: #F2E5E5;">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <ComboBox fx:id="viewNum6" editable="true" prefHeight="26.0" prefWidth="102.0" promptText="1" style="-fx-background-color: #F2E5E5;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </VBox>
+                                          <Pane prefHeight="156.0" prefWidth="80.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="hb111" prefHeight="201.0" prefWidth="521.0" style="-fx-background-color: E8C4C4;">
+                                       <children>
+                                          <Pane prefHeight="156.0" prefWidth="80.0" />
+                                          <VBox fx:id="vb7" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="156.0" prefWidth="180.0" style="-fx-border-color: GRAY;">
+                                             <children>
+                                                <HBox prefHeight="23.0" prefWidth="202.0">
+                                                   <children>
+                                                      <Button mnemonicParsing="false" onAction="#add7Clicked" prefHeight="21.0" prefWidth="100.0" style="-fx-background-color: #F2E5E5;" text="Sepete ekle">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button fx:id="remove7" disable="true" mnemonicParsing="false" onAction="#remove7Clicked" prefHeight="21.0" prefWidth="100.0" style="-fx-background-color: #F2E5E5;" text="Sepetten çıkar">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <ImageView fx:id="iw7" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ImageView>
+                                                <HBox prefHeight="39.0" prefWidth="255.0">
+                                                   <children>
+                                                      <Button fx:id="btn7" mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" style="-fx-background-color: #F2E5E5;">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <ComboBox fx:id="viewNum7" editable="true" prefHeight="26.0" prefWidth="102.0" promptText="1" style="-fx-background-color: #F2E5E5;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </VBox>
+                                          <VBox fx:id="vb8" prefHeight="156.0" prefWidth="180.0" style="-fx-border-color: GRAY;">
+                                             <children>
+                                                <HBox minHeight="-Infinity" prefHeight="23.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Button mnemonicParsing="false" onAction="#add8Clicked" prefHeight="21.0" prefWidth="100.0" style="-fx-background-color: #F2E5E5;" text="Sepete ekle">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button fx:id="remove8" disable="true" mnemonicParsing="false" onAction="#remove8Clicked" prefHeight="21.0" prefWidth="100.0" style="-fx-background-color: #F2E5E5;" text="Sepetten çıkar">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <ImageView fx:id="iw8" fitHeight="148.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ImageView>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Button fx:id="btn8" mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" style="-fx-background-color: #F2E5E5;">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <ComboBox fx:id="viewNum8" editable="true" prefHeight="26.0" prefWidth="102.0" promptText="1" style="-fx-background-color: #F2E5E5;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </VBox>
+                                          <Pane prefHeight="156.0" prefWidth="80.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="hb1111" prefHeight="201.0" prefWidth="521.0" style="-fx-background-color: E8C4C4;">
+                                       <children>
+                                          <Pane prefHeight="156.0" prefWidth="80.0" />
+                                          <VBox fx:id="vb9" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="156.0" prefWidth="180.0" style="-fx-border-color: GRAY;">
+                                             <children>
+                                                <HBox prefHeight="23.0" prefWidth="202.0">
+                                                   <children>
+                                                      <Button mnemonicParsing="false" onAction="#add9Clicked" prefHeight="21.0" prefWidth="100.0" style="-fx-background-color: #F2E5E5;" text="Sepete ekle">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button fx:id="remove9" disable="true" mnemonicParsing="false" onAction="#remove9Clicked" prefHeight="21.0" prefWidth="100.0" style="-fx-background-color: #F2E5E5;" text="Sepetten çıkar">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <ImageView fx:id="iw9" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ImageView>
+                                                <HBox prefHeight="39.0" prefWidth="255.0">
+                                                   <children>
+                                                      <Button fx:id="btn9" mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" style="-fx-background-color: #F2E5E5;">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <ComboBox fx:id="viewNum9" editable="true" prefHeight="26.0" prefWidth="102.0" promptText="1" style="-fx-background-color: #F2E5E5;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </VBox>
+                                          <VBox fx:id="vb10" prefHeight="156.0" prefWidth="180.0" style="-fx-border-color: GRAY;">
+                                             <children>
+                                                <HBox minHeight="-Infinity" prefHeight="23.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Button mnemonicParsing="false" onAction="#add10Clicked" prefHeight="21.0" prefWidth="100.0" style="-fx-background-color: #F2E5E5;" text="Sepete ekle">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <Button fx:id="remove10" disable="true" mnemonicParsing="false" onAction="#remove10Clicked" prefHeight="21.0" prefWidth="100.0" style="-fx-background-color: #F2E5E5;" text="Sepetten çıkar">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <ImageView fx:id="iw10" fitHeight="148.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ImageView>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Button fx:id="btn10" mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" style="-fx-background-color: #F2E5E5;">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Button>
+                                                      <ComboBox fx:id="viewNum10" editable="true" prefHeight="26.0" prefWidth="102.0" promptText="1" style="-fx-background-color: #F2E5E5;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </VBox>
+                                          <Pane prefHeight="156.0" prefWidth="80.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

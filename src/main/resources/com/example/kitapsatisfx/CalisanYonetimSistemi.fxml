@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="650.0" style="-fx-background-color: #F2E5E5;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kitapsatisfx.CalisanYoneticiController">
+   <children>
+      <GridPane hgap="5.0" layoutX="55.0" layoutY="59.0" prefHeight="77.0" prefWidth="535.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="tf_calisanAdi" style="-fx-background-radius: 7;" />
+            <TextField fx:id="tf_calisanSoyadi" style="-fx-background-radius: 7;" GridPane.columnIndex="1" />
+            <TextField fx:id="tf_kullaniciAdi" prefWidth="320.0" style="-fx-background-radius: 7;" GridPane.columnIndex="2" />
+            <PasswordField fx:id="tf_calisanSifre" style="-fx-background-radius: 7;" GridPane.columnIndex="3" />
+            <ComboBox fx:id="cmb_calisanPozisyon" prefWidth="150.0" style="-fx-background-radius: 7;" GridPane.rowIndex="1" />
+            <ComboBox fx:id="cmb_calismaSuresi" prefWidth="150.0" style="-fx-background-radius: 7;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tf_calisanMail" style="-fx-background-radius: 7;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="tf_calisanTelNo" style="-fx-background-radius: 7;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <TableView fx:id="tb_calisan" layoutX="6.0" layoutY="290.0" prefHeight="356.0" prefWidth="638.0">
+        <columns>
+          <TableColumn fx:id="calisanID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="calisanAdi" prefWidth="75.0" text="Ad" />
+          <TableColumn fx:id="calisanSoyadi" prefWidth="75.0" text="Soyad" />
+          <TableColumn fx:id="calisanPozisyon" prefWidth="75.0" text="Pozisyon" />
+          <TableColumn fx:id="calismaSuresi" prefWidth="75.0" text="Süre" />
+          <TableColumn fx:id="calisanMaas" prefWidth="75.0" text="Maaş" />
+          <TableColumn fx:id="calisanMail" prefWidth="96.0" text="Mail" />
+          <TableColumn fx:id="calisanKullaniciAdi" prefWidth="91.0" text="Kullanıcı Adı" />
+        </columns>
+      </TableView>
+      <HBox layoutX="43.0" layoutY="149.0" prefHeight="27.0" prefWidth="551.0" spacing="10.0">
+         <children>
+            <Button fx:id="btn_calisanEkle" mnemonicParsing="false" onAction="#calisanEkle" prefHeight="30.0" prefWidth="125.0" style="-fx-background-radius: 7;" text="Çalışan Ekle" />
+            <Button fx:id="btn_calisanSil" mnemonicParsing="false" onAction="#calisanSil" prefHeight="30.0" prefWidth="125.0" style="-fx-background-radius: 7;" text="Çalışan Sil" />
+            <ComboBox fx:id="cmb_guncellenecek" prefHeight="20.0" prefWidth="125.0" style="-fx-background-radius: 7;" />
+            <Button fx:id="btn_calisanGuncelle" mnemonicParsing="false" onAction="#calisanGuncelle" prefHeight="30.0" prefWidth="125.0" style="-fx-background-radius: 7;" text="Çalışanı Güncelle" />
+         </children>
+      </HBox>
+      <HBox layoutX="55.0" layoutY="195.0" prefHeight="35.0" prefWidth="256.0" spacing="5.0">
+         <children>
+            <ComboBox fx:id="cmb_istenen" prefWidth="150.0" style="-fx-background-radius: 7;" />
+            <ComboBox fx:id="cmb_sutunBilgisi" prefWidth="150.0" style="-fx-background-radius: 7;" />
+         </children>
+      </HBox>
+      <Label fx:id="lbl_sonuc" alignment="CENTER" layoutX="87.0" layoutY="261.0" prefHeight="27.0" prefWidth="205.0" />
+      <HBox layoutX="334.0" layoutY="195.0" prefHeight="35.0" prefWidth="256.0" spacing="5.0">
+         <children>
+            <ComboBox fx:id="cmb_siralamaSekli" prefWidth="150.0" style="-fx-background-radius: 7;" />
+            <ComboBox fx:id="cmb_siralanacakSutun" prefWidth="150.0" style="-fx-background-radius: 7;" />
+         </children>
+      </HBox>
+      <Button fx:id="btn_sirala" layoutX="402.0" layoutY="234.0" mnemonicParsing="false" onAction="#sirala" prefHeight="27.0" prefWidth="120.0" style="-fx-background-radius: 7;" text="Sırala" />
+      <Label alignment="CENTER" layoutX="81.0" layoutY="8.0" prefHeight="45.0" prefWidth="484.0" text="Çalışan Yönetim Sistemi" textFill="#ce7777">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="53.0" fitWidth="418.0" layoutX="116.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/calisanYonetimSistemi.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_hesapla" layoutX="130.0" layoutY="234.0" mnemonicParsing="false" onAction="#degerHesapla" prefHeight="27.0" prefWidth="120.0" style="-fx-background-radius: 7;" text="Hesapla" />
+   </children>
+</AnchorPane>
